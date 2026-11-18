@@ -34,7 +34,7 @@ h1, h2, h3, p { margin: 0; }
 
 /* ───────── Живой фон: медленный свет и плёночное зерно ───────── */
 .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; background: var(--bg); }
-.bg i { position: absolute; border-radius: 50%; filter: blur(110px); will-change: transform; }
+.bg i { position: absolute; border-radius: 50%; filter: blur(90px); will-change: transform; }
 .bg .b1 { width: 62vmax; height: 62vmax; left: -18vmax; top: -22vmax; background: #1f4d80; opacity: .42; animation: float1 46s ease-in-out infinite alternate; }
 .bg .b2 { width: 54vmax; height: 54vmax; right: -20vmax; top: 18vh; background: #0f5a63; opacity: .34; animation: float2 58s ease-in-out infinite alternate; }
 .bg .b3 { width: 48vmax; height: 48vmax; left: 22vw; bottom: -30vmax; background: #5a1a30; opacity: .30; animation: float3 52s ease-in-out infinite alternate; }
@@ -43,7 +43,7 @@ h1, h2, h3, p { margin: 0; }
 @keyframes float3 { to { transform: translate(18vw, -22vh) scale(1.1); } }
 
 .grain {
-  position: absolute; inset: -50%; pointer-events: none; opacity: .09; mix-blend-mode: overlay;
+  position: absolute; inset: -8%; pointer-events: none; opacity: .05;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation: grain 0.9s steps(6) infinite;
 }
@@ -78,12 +78,14 @@ h1, h2, h3, p { margin: 0; }
 .lead { line-height: 1.4; margin-bottom: 22px; }
 
 .cast { display: flex; flex: 1; min-height: 52svh; }
-.cast li { flex: 1 1 0; min-width: 0; transition: flex-grow .7s var(--ease); }
-.cast:hover li { flex-grow: .85; }
-.cast li:hover { flex-grow: 1.9; }
-.cast a { position: relative; display: block; height: 100%; overflow: hidden; }
-.cast img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
-.cast a:hover img { transform: scale(1.05); }
+.cast li { flex: 1 1 0; min-width: 0; animation: arrive 1.1s var(--ease) both; }
+.cast li:nth-child(2) { animation-delay: .12s; } .cast li:nth-child(3) { animation-delay: .24s; }
+.cast li:nth-child(4) { animation-delay: .36s; } .cast li:nth-child(5) { animation-delay: .48s; }
+@keyframes arrive { from { opacity: 0; transform: translateY(36px); } to { opacity: 1; transform: none; } }
+.cast a { position: relative; display: block; height: 100%; overflow: hidden; transition: opacity .45s var(--ease); }
+.cast img { width: 100%; height: 100%; object-fit: cover; }
+.cast:hover a { opacity: .5; }
+.cast:hover li:hover a { opacity: 1; }
 .tag { position: absolute; left: 0; top: 0; padding: 12px 18px; background: var(--tc); color: var(--ti); font-weight: 500; font-size: var(--step-small); }
 
 /* ───────── Главы: свой цвет, сетка кадров одной высоты в ряду ───────── */
@@ -143,7 +145,7 @@ dialog#lb[open] { display: grid; grid-template-columns: 72px 1fr 72px; grid-temp
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .bg i, .grain, .head h1 .ln > span { animation: none; }
+  .bg i, .grain, .head h1 .ln > span, .cast li { animation: none; }
   .js .rv, .js .rv-lift { opacity: 1; transform: none; transition: none; }
   * { transition-duration: 0.01ms !important; }
 }
@@ -163,7 +165,6 @@ dialog#lb[open] { display: grid; grid-template-columns: 72px 1fr 72px; grid-temp
   .head h1 { font-size: 8.6vw; }
   .intro { max-width: none; }
   .cast { margin: 0 var(--m) var(--m); min-height: 40svh; }
-  .cast:hover li, .cast li:hover { flex-grow: 1; }
   .tag { padding: 12px 6px; font-size: 13px; writing-mode: vertical-rl; transform: rotate(180deg); }
   .big { font-size: 11.5vw; }
   dialog#lb[open] { grid-template-columns: 1fr; }
