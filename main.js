@@ -16,6 +16,15 @@
     rv.forEach((el) => el.classList.add("in"));
   }
 
+  /* ── Свет в главах двигается только пока глава на экране: так легче для устройства ── */
+  if ("IntersectionObserver" in window) {
+    const gio = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.target.classList.toggle("is-off", !e.isIntersecting)),
+      { rootMargin: "20% 0px" }
+    );
+    document.querySelectorAll(".chapter").forEach((el) => gio.observe(el));
+  }
+
   /* ── Ролики сами играют без звука, пока видны на экране ── */
   const vids = [...document.querySelectorAll(".frame video")];
   if ("IntersectionObserver" in window && !reduce) {
