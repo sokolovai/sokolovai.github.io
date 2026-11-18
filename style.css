@@ -88,6 +88,8 @@ h1, h2, h3, p { margin: 0; }
 .cast a { position: relative; display: block; height: 100%; overflow: hidden; transition: opacity .45s var(--ease); }
 .cast img { width: 100%; height: 100%; object-fit: cover; }
 .cast:hover a { opacity: .5; }
+.cast.auto a { opacity: .45; transition: opacity .8s var(--ease); }
+.cast.auto li.on a { opacity: 1; }
 .cast:hover li:hover a { opacity: 1; }
 .tag { position: absolute; left: 0; top: 0; padding: 12px 18px; background: var(--tc); color: var(--ti); font-weight: 500; font-size: var(--step-small); }
 

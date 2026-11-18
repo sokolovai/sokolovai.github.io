@@ -16,6 +16,24 @@
     rv.forEach((el) => el.classList.add("in"));
   }
 
+  /* ── Афиша героев на телефоне (там нет «наведения»): подсветка сама переходит от героя к герою ── */
+  const cast = document.querySelector(".cast");
+  if (cast && !reduce && matchMedia("(hover: none), (max-width: 760px)").matches) {
+    const lis = [...cast.querySelectorAll("li")];
+    let i = 0, seen = true;
+    cast.classList.add("auto");
+    const spot = () => lis.forEach((l, k) => l.classList.toggle("on", k === i));
+    spot();
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver((es) => { seen = es[0].isIntersecting; }).observe(cast);
+    }
+    setInterval(() => {
+      if (!seen || document.hidden) return;
+      i = (i + 1) % lis.length;
+      spot();
+    }, 2600);
+  }
+
   /* ── Свет в главах двигается только пока глава на экране: так легче для устройства ── */
   if ("IntersectionObserver" in window) {
     const gio = new IntersectionObserver(
