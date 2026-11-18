@@ -130,11 +130,15 @@ h1, h2, h3, p { margin: 0; }
 .cap { display: block; padding-top: 10px; font-size: var(--step-small); color: var(--muted); }
 
 /* ───────── Контакты ───────── */
-.contact { min-height: 100svh; background: var(--field); color: var(--field-ink); display: grid; grid-template-rows: auto 1fr auto; padding: var(--m); }
+.contact { grid-template-columns: minmax(0, 1fr); min-height: 100svh; background: var(--field); color: var(--field-ink); display: grid; grid-template-rows: auto 1fr auto; padding: var(--m); }
 .contact h2 { font: 500 clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)/1.3 var(--text); max-width: 26ch; }
 .big { align-self: center; display: flex; flex-direction: column; gap: 0.1em; font: 800 clamp(2.4rem, 9.5vw, 10rem)/1 var(--display); letter-spacing: -0.03em; text-transform: uppercase; }
-.big a { width: fit-content; transition: color .25s, transform .5s var(--ease); }
+.big a { display: flex; align-items: center; gap: .28em; width: fit-content; transition: color .25s, transform .5s var(--ease); }
 .big a:hover { color: #fff; transform: translateX(1.2vw); }
+.pt { flex: none; width: .82em; height: .48em; color: #fff; animation: point 1.1s ease-in-out infinite; }
+.big a:nth-child(2) .pt { animation-delay: .25s; }
+@keyframes point { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(.22em); } }
+.big a:hover .pt { animation-duration: .5s; }
 .foot { display: flex; justify-content: space-between; gap: 16px; font-size: var(--step-small); }
 .foot a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
@@ -158,7 +162,7 @@ dialog#lb[open] { display: grid; grid-template-columns: 72px 1fr 72px; grid-temp
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .bg i, .glow i, .grain, .head h1 .ln > span, .cast li { animation: none; }
+  .bg i, .glow i, .grain, .head h1 .ln > span, .cast li, .pt { animation: none; }
   .js .rv, .js .rv-lift { opacity: 1; transform: none; transition: none; }
   * { transition-duration: 0.01ms !important; }
 }
@@ -181,7 +185,7 @@ dialog#lb[open] { display: grid; grid-template-columns: 72px 1fr 72px; grid-temp
   .intro { max-width: none; }
   .cast { margin: 0 var(--m) var(--m); min-height: 40svh; }
   .tag { padding: 12px 6px; font-size: 13px; writing-mode: vertical-rl; transform: rotate(180deg); }
-  .big { font-size: 11.5vw; }
+  .big { font-size: 10.2vw; }
   dialog#lb[open] { grid-template-columns: 1fr; }
   .lb-stage, .lb-title { grid-column: 1; padding-inline: 8px; }
   .lb-nav { position: absolute; bottom: 14px; z-index: 2; background: rgba(0,0,0,.5); width: 56px; }
