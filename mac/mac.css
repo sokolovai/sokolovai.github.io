@@ -236,3 +236,10 @@ h1, p { margin: 0; }
 .force-ios body { background: #d6d2ca; }
 
 .iapps { padding: 4px 14px; }
+
+/* ───────── Запасное стекло (Safari, Firefox): почти прозрачное, без матового размытия ───────── */
+.glass { -webkit-backdrop-filter: blur(3px) saturate(1.7) brightness(1.1); backdrop-filter: blur(3px) saturate(1.7) brightness(1.1); }
+.ifolder { -webkit-backdrop-filter: blur(7px) saturate(1.7); backdrop-filter: blur(7px) saturate(1.7); background: rgba(255, 255, 255, .2); }
+.iapp { background: rgba(8, 12, 26, .46); -webkit-backdrop-filter: blur(16px) saturate(1.5); backdrop-filter: blur(16px) saturate(1.5); }
+.win { -webkit-backdrop-filter: blur(14px) saturate(1.8) brightness(1.08); backdrop-filter: blur(14px) saturate(1.8) brightness(1.08); }
+.iwidget.glass { background: rgba(10, 18, 44, .12); }
