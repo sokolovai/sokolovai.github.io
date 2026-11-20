@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Живые люди, которых нет — AI-художник</title>
+<meta name="description" content="Портфолио AI-художника в виде рабочего стола: папки с героями, кадры и видео.">
+<meta name="theme-color" content="#d6d2ca">
+<meta property="og:title" content="Живые люди, которых нет — AI-художник">
+<meta property="og:description" content="Портфолио AI-художника в виде рабочего стола: папки с героями, кадры и видео.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230b0b0c'/%3E%3Crect x='8' y='8' width='16' height='16' fill='%23c1272d'/%3E%3C/svg%3E">
+<script>document.documentElement.classList.add('js'); if (/[?&]view=(phone|ios|mobile)/.test(location.search)) document.documentElement.classList.add('force-ios');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500&family=Unbounded:wght@800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mac.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="gBack" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5bb8f9"/><stop offset="1" stop-color="#2f88e6"/></linearGradient>
+  <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a6deff"/><stop offset=".45" stop-color="#69bffb"/><stop offset="1" stop-color="#3b9cf2"/></linearGradient>
+  <symbol id="mfolder" viewBox="0 0 128 104">
+    <path d="M8 16a10 10 0 0 1 10-10h27c3 0 5.800 1.200 8 3.300l5 4.700H110a10 10 0 0 1 10 10v66a10 10 0 0 1-10 10H18A10 10 0 0 1 8 90Z" fill="url(#gBack)"/>
+    <path d="M8 36a10 10 0 0 1 10-10H110a10 10 0 0 1 10 10v54a10 10 0 0 1-10 10H18A10 10 0 0 1 8 90Z" fill="url(#gFront)"/>
+    <path d="M18 26.500H110a9.500 9.500 0 0 1 9 7" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="1.600"/>
+  </symbol>
+</defs></svg>
+
+<!-- Компьютер: экран MacBook -->
+<div class="stage" id="desktop-mode">
+    <div class="laptop">
+    <div class="lid">
+      <div class="screen" id="screen">
+        <div class="wall" aria-hidden="true"><video class="wallvid" src="wall/mac.mp4" poster="wall/mac-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+        <div class="menubar glass" role="menubar">
+          <span class="mark" aria-hidden="true"></span>
+          <strong class="appname" id="appname">Портфолио</strong>
+          <a class="mi" href="../">Обычная версия</a>
+          <span class="sp"></span>
+          <svg class="mi-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a15 15 0 0 1 20 0M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="19.6" r="1.3" fill="currentColor"/></svg>
+          <svg class="mi-ic bat" viewBox="0 0 28 14" aria-hidden="true"><rect x="1" y="2" width="21" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3.2" y="4.2" width="14" height="5.6" rx="1.4" fill="currentColor"/><rect x="23.5" y="5" width="2.4" height="4" rx="1" fill="currentColor"/></svg>
+          <time class="clock" id="clock"></time>
+        </div>
+
+        <section class="widget glass" aria-labelledby="h1">
+          <h1 id="h1">Живые люди, которых нет</h1>
+          <p>Этих людей не существует. Я придумал каждого, и теперь у них есть характер, дорога и своя странность. Заходите знакомиться.</p>
+          <p class="hint"><span class="hint-d">Нажмите на папку, чтобы заглянуть внутрь</span><span class="hint-m">Нажми на папку, чтобы открыть</span></p>
+        </section>
+
+        <nav class="dicons" aria-label="Папки">
+        <button class="dicon" data-loc="hero:noah"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Ной</span></button>
+        <button class="dicon" data-loc="hero:vika"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Виктория</span></button>
+        <button class="dicon" data-loc="hero:arkady"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Аркадий</span></button>
+        <button class="dicon" data-loc="hero:harlequin"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Арлекин</span></button>
+        <button class="dicon" data-loc="hero:gennady"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Геннадий</span></button>
+        <button class="dicon" data-loc="vroot"><svg class="mfolder" viewBox="0 0 128 104" aria-hidden="true"><use href="#mfolder"/></svg><span class="lbl">Видео</span></button>
+        </nav>
+
+        <div class="dock glass" id="dock" role="toolbar" aria-label="Док">
+          <span class="dk" role="img" aria-label="Finder"><span class="dki"><img src="icons/finder.png" alt="" draggable="false" width="256" height="256"></span></span>
+          <a class="dk" href="https://t.me/sokolov_pv" target="_blank" rel="noopener" aria-label="Telegram: @sokolov_pv"><span class="dki"><img src="icons/telegram.png" alt="" draggable="false" width="256" height="256"></span></a>
+          <a class="dk" href="https://instagram.com/sokolov_pv" target="_blank" rel="noopener" aria-label="Instagram: @sokolov_pv"><span class="dki"><img src="icons/instagram.png" alt="" draggable="false" width="256" height="256"></span></a>
+          <span class="dk" role="img" aria-label="Safari"><span class="dki"><img src="icons/safari.png" alt="" draggable="false" width="256" height="256"></span></span>
+          <i class="dsep" id="dsep" hidden></i>
+        </div>
+      </div>
+    </div>
+    <div class="base" aria-hidden="true"></div>
+  </div>
+</div>
+
+<!-- Телефон: рабочий стол iPhone -->
+<div class="ios" id="ios">
+  <div class="wall" aria-hidden="true"><img class="wallimg" src="wall/ios.jpg" alt=""></div>
+  <div class="istatus"><time id="itime"></time><span class="sig" aria-hidden="true"><svg viewBox="0 0 20 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor"/></svg><svg viewBox="0 0 28 14"><rect x="1" y="2" width="21" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="3.2" y="4.2" width="14" height="5.6" rx="1.4" fill="currentColor"/><rect x="23.5" y="5" width="2.4" height="4" rx="1" fill="currentColor"/></svg></span></div>
+  <div class="ihome" id="ihome">
+    <section class="iwidget glass" aria-labelledby="h1m">
+      <h1 id="h1m">Живые люди, которых нет</h1>
+      <p>Этих людей не существует. Я придумал каждого, и теперь у них есть характер, дорога и своя странность. Заходите знакомиться.</p>
+      <p class="hint"><span class="hint-d">Нажмите на папку, чтобы заглянуть внутрь</span><span class="hint-m">Нажми на папку, чтобы открыть</span></p>
+    </section>
+    <nav class="apps" aria-label="Папки">
+      <button class="app" data-loc="hero:noah"><span class="ifolder"><img src="../media/thumb/noah-00.jpg" alt=""><img src="../media/thumb/noah-01.jpg" alt=""><img src="../media/thumb/noah-02.jpg" alt=""><img src="../media/thumb/noah-03.jpg" alt=""><img src="../media/thumb/noah-04.jpg" alt=""><img src="../media/thumb/noah-05.jpg" alt=""><img src="../media/thumb/noah-06.jpg" alt=""><img src="../media/thumb/noah-08.jpg" alt=""><img src="../media/thumb/noah-09.jpg" alt=""></span><span class="lbl">Ной</span></button>
+      <button class="app" data-loc="hero:vika"><span class="ifolder"><img src="../media/thumb/vika-01.jpg" alt=""><img src="../media/thumb/vika-02.jpg" alt=""><img src="../media/thumb/vika-03.jpg" alt=""><img src="../media/thumb/vika-04.jpg" alt=""><img src="../media/thumb/vika-05.jpg" alt=""><img src="../media/thumb/vika-06.jpg" alt=""><img src="../media/thumb/vika-07.jpg" alt=""><img src="../media/thumb/vika-08.jpg" alt=""></span><span class="lbl">Виктория</span></button>
+      <button class="app" data-loc="hero:arkady"><span class="ifolder"><img src="../media/thumb/arkady-01.jpg" alt=""><img src="../media/thumb/arkady-02.jpg" alt=""><img src="../media/thumb/arkady-03.jpg" alt=""><img src="../media/thumb/arkady-04.jpg" alt=""><img src="../media/thumb/arkady-05.jpg" alt=""><img src="../media/thumb/arkady-06.jpg" alt=""><img src="../media/thumb/arkady-07.jpg" alt=""><img src="../media/thumb/arkady-08.jpg" alt=""><img src="../media/thumb/arkady-09.jpg" alt=""></span><span class="lbl">Аркадий</span></button>
+      <button class="app" data-loc="hero:harlequin"><span class="ifolder"><img src="../media/thumb/harlequin-01.jpg" alt=""><img src="../media/thumb/harlequin-02.jpg" alt=""><img src="../media/thumb/harlequin-03.jpg" alt=""><img src="../media/thumb/harlequin-04.jpg" alt=""><img src="../media/thumb/harlequin-05.jpg" alt=""><img src="../media/thumb/harlequin-06.jpg" alt=""><img src="../media/thumb/harlequin-07.jpg" alt=""><img src="../media/thumb/harlequin-08.jpg" alt=""></span><span class="lbl">Арлекин</span></button>
+      <button class="app" data-loc="hero:gennady"><span class="ifolder"><img src="../media/thumb/gennady-01.jpg" alt=""><img src="../media/thumb/gennady-02.jpg" alt=""><img src="../media/thumb/gennady-03.jpg" alt=""><img src="../media/thumb/gennady-04.jpg" alt=""><img src="../media/thumb/gennady-05.jpg" alt=""><img src="../media/thumb/gennady-06.jpg" alt=""><img src="../media/thumb/gennady-07.jpg" alt=""></span><span class="lbl">Геннадий</span></button>
+      <button class="app" data-loc="vroot"><span class="ifolder"><img src="../media/poster/audi-rs6.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/porsche-panamera.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/trend-knight.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/trend-popcorn.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/iamrebel.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/seasons.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/new-1.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/tram.jpg" alt="" style="object-position:50% 40%"><img src="../media/poster/skalki.jpg" alt="" style="object-position:50% 40%"></span><span class="lbl">Видео</span></button>
+    </nav>
+  </div>
+  <div class="idock glass" role="toolbar" aria-label="Док">
+    <a class="dk" href="https://t.me/sokolov_pv" target="_blank" rel="noopener" aria-label="Telegram: @sokolov_pv"><span class="dki"><img src="icons/telegram.png" alt="" draggable="false" width="256" height="256"></span></a>
+    <a class="dk" href="https://instagram.com/sokolov_pv" target="_blank" rel="noopener" aria-label="Instagram: @sokolov_pv"><span class="dki"><img src="icons/instagram.png" alt="" draggable="false" width="256" height="256"></span></a>
+    <span class="dk" role="img" aria-label="Safari"><span class="dki"><img src="icons/safari.png" alt="" draggable="false" width="256" height="256"></span></span>
+  </div>
+  <i class="hbar" aria-hidden="true"></i>
+  <section class="iapp" id="iapp" hidden aria-live="polite">
+    <header class="inav glass"><button class="iback" id="iback" type="button"><svg viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2 2 10l8 8" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="iback-l">Назад</span></button><strong id="ititle"></strong></header>
+    <div class="ibody" id="ibody"></div>
+  </section>
+  <section class="iview" id="iview" hidden>
+    <button class="iclose glass" id="iclose" type="button" aria-label="Закрыть">Закрыть</button>
+    <div class="itrack" id="itrack"></div>
+  </section>
+</div>
+
+<noscript><p style="position:fixed;inset:auto 0 0 0;padding:12px;background:#000;color:#fff;text-align:center">Для этой версии нужен JavaScript. <a href="../" style="text-decoration:underline">Открыть обычную версию сайта</a></p></noscript>
+<script type="application/json" id="data">{"chars":[{"id":"noah","name":"Ной","color":"#7fa6cc","cast":"noah-09","pos":"50% 28%","imgs":["noah-00","noah-01","noah-02","noah-03","noah-04","noah-05","noah-06","noah-08","noah-09","noah-10","noah-11"]},{"id":"vika","name":"Виктория","color":"#e0457b","cast":"vika-01","pos":"50% 35%","imgs":["vika-01","vika-02","vika-03","vika-04","vika-05","vika-06","vika-07","vika-08"]},{"id":"arkady","name":"Аркадий","color":"#e2ae3c","cast":"arkady-02","pos":"50% 38%","imgs":["arkady-01","arkady-02","arkady-03","arkady-04","arkady-05","arkady-06","arkady-07","arkady-08","arkady-09","arkady-10"]},{"id":"harlequin","name":"Арлекин","color":"#e0602c","cast":"harlequin-08","pos":"50% 40%","imgs":["harlequin-01","harlequin-02","harlequin-03","harlequin-04","harlequin-05","harlequin-06","harlequin-07","harlequin-08"]},{"id":"gennady","name":"Геннадий","color":"#2f8795","cast":"gennady-05","pos":"50% 30%","imgs":["gennady-01","gennady-02","gennady-03","gennady-04","gennady-05","gennady-06","gennady-07"]}],"groups":[{"id":"cars","name":"Автомобили","color":"#6f86e0","clips":[{"id":"audi-rs6","title":"Audi RS6","ar":0.5625},{"id":"porsche-panamera","title":"Porsche Panamera","ar":0.5625},{"id":"ff3","title":"Ford Focus","ar":1.7778}]},{"id":"trends","name":"Тренды","color":"#d6628a","clips":[{"id":"trend-knight","title":"Knight","ar":0.5625},{"id":"trend-popcorn","title":"Popcorn","ar":0.5625},{"id":"trend-cash","title":"Cash","ar":0.5625},{"id":"trend-cat","title":"Cat","ar":1.3333}]},{"id":"mood","name":"Атмосфера","color":"#3f9aa5","clips":[{"id":"iamrebel","title":"IAMREBEL","ar":0.5634},{"id":"iamrebel-2","title":"IAMREBEL 2","ar":0.5625},{"id":"seasons","title":"Времена года","ar":0.5625},{"id":"new-1","title":"Киберпанк 1","ar":0.5625},{"id":"new-2","title":"Киберпанк 2","ar":0.5625}]},{"id":"ads","name":"Для рекламы","color":"#c98d3a","clips":[{"id":"tram","title":"Tram","ar":0.5625},{"id":"skalki","title":"Скалки-мешалки","ar":0.5625},{"id":"clip-untitled","title":"Корпусный десерт","ar":0.5625},{"id":"simple-1","title":"Simple 1","ar":0.5625},{"id":"simple-2","title":"Simple 2","ar":0.5625}]}]}</script>
+<script src="lens.js"></script>
+<script src="mac.js"></script>
+</body>
+</html>
